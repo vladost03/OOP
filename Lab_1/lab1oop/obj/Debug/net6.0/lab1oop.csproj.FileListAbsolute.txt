@@ -1,0 +1,15 @@
+C:\Users\T14\source\repos\lab1oop\bin\Debug\net6.0\lab1oop.exe
+C:\Users\T14\source\repos\lab1oop\bin\Debug\net6.0\lab1oop.deps.json
+C:\Users\T14\source\repos\lab1oop\bin\Debug\net6.0\lab1oop.runtimeconfig.json
+C:\Users\T14\source\repos\lab1oop\bin\Debug\net6.0\lab1oop.dll
+C:\Users\T14\source\repos\lab1oop\bin\Debug\net6.0\ref\lab1oop.dll
+C:\Users\T14\source\repos\lab1oop\bin\Debug\net6.0\lab1oop.pdb
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.csproj.AssemblyReference.cache
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.AssemblyInfoInputs.cache
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.AssemblyInfo.cs
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.csproj.CoreCompileInputs.cache
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.dll
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\ref\lab1oop.dll
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.pdb
+C:\Users\T14\source\repos\lab1oop\obj\Debug\net6.0\lab1oop.genruntimeconfig.cache
