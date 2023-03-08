@@ -1,6 +1,6 @@
 ﻿public class TArray
 {
-    private int[] arr;
+    private double[] arr;
     public TArray()
     {
 
@@ -9,10 +9,10 @@
     {
         Console.WriteLine("Введiть кiлькiсть елементiв масиву: ");
         int n = Convert.ToInt32(Console.ReadLine());
-        this.arr = new int[n];
+        this.arr = new double[n];
         Console.WriteLine("Введiть елементи масиву (Enter - наступний елемент): ");
         for (int i = 0; i < n; i++)
-            arr[i] = Convert.ToInt32(Console.ReadLine());
+            arr[i] = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine("Масив: ");
         for (int i = 0; i < n; i++)
             Console.WriteLine(arr[i]);
@@ -35,6 +35,15 @@
                 count +=1;
         }
        return count;
+    }
+    public void Task12(TArray a, TArray b, TArray c)
+    {
+        double[] newarr = new double[a.arr.Length];
+        for (int i = 0; i < a.arr.Length; i++)
+            newarr[i] = a.arr[i] - 3 * b.arr[i] + 2 * c.arr[i];
+        Console.WriteLine("a - 3*b + 2*c = ");
+        for (int i = 0; i < newarr.Length; i++)
+            Console.WriteLine(newarr[i]);
     }
     public void Task13()
     {
@@ -61,8 +70,8 @@ public class TMatrix
 {
     private int x;
     private int y;
-    private int[,] matrix;
-    private int[,] smoothedMatrix;
+    private double[,] matrix;
+    private double[,] smoothedMatrix;
     public TMatrix()
     {
 
@@ -71,10 +80,10 @@ public class TMatrix
     {
         this.x = x;
         this.y = y;
-        matrix = new int[x, y];
+        matrix = new double[x, y];
         for (int i = 0; i < x; i++)
             for (int j = 0; j < y; j++)
-                matrix[i, j] = Convert.ToInt32(Console.ReadLine());
+                matrix[i, j] = Convert.ToDouble(Console.ReadLine());
     }
     public void printMatrix()
     {
@@ -95,7 +104,7 @@ public class TMatrix
     }
     public void Task21()
     {
-        int[] diagonal = new int[matrix.GetLength(0)];
+        double[] diagonal = new double[matrix.GetLength(0)];
 
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
@@ -112,12 +121,12 @@ public class TMatrix
     }
     public void Task22()
     {
-        smoothedMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
+        smoothedMatrix = new double[matrix.GetLength(0), matrix.GetLength(1)];
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             for (int j = 0; j < matrix.GetLength(1); j++)
             {
-                int sum = 0;
+                double sum = 0;
                 int count = 0;
 
                 for (int x = -1; x <= 1; x++)
@@ -157,7 +166,7 @@ public class TMatrix
     public void Task23()
     {
         Task22();
-        int underd = 0;
+        double underd = 0;
 
         for (int i = 1; i < smoothedMatrix.GetLength(0); i++)
         {
@@ -180,35 +189,16 @@ class MainCode
         Console.WriteLine("кiлькiсть -елементiв пiсля першого додатнього: ");
         Console.WriteLine(array.Task11());
         Console.WriteLine("Завдання 1.2: ");
-        Console.WriteLine("Введiть довжину:");
-        int n = Convert.ToInt32(Console.ReadLine());
-        int[]  a= new int[n];
-        Console.WriteLine("Введiть елементи масиву (Enter - наступний елемент): ");
-        for (int i = 0; i < n; i++)
-            a[i] = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Масив a: ");
-        for (int i = 0; i < n; i++)
-            Console.WriteLine(a[i]);
-        int[] b = new int[n];
-        Console.WriteLine("Введiть елементи масиву (Enter - наступний елемент): ");
-        for (int i = 0; i < n; i++)
-            b[i] = Convert.ToInt32(Console.ReadLine());
+        TArray a = new TArray();
+        a.setprintArray();
         Console.WriteLine("Масив b: ");
-        for (int i = 0; i < n; i++)
-            Console.WriteLine(b[i]);
-        int[] c = new int[n];
-        Console.WriteLine("Введiть елементи масиву (Enter - наступний елемент): ");
-        for (int i = 0; i < n; i++)
-            c[i] = Convert.ToInt32(Console.ReadLine());
+        TArray b = new TArray();
+        b.setprintArray();
         Console.WriteLine("Масив c: ");
-        for (int i = 0; i < n; i++)
-            Console.WriteLine(c[i]);
-        double[] newarr = new double[n];
-        for (int i = 0; i < n; i++)
-            newarr[i] = a[i] - 3 * b[i] + 2 * c[i];
-        Console.WriteLine("a - 3*b + 2*c = " );
-        for (int i = 0; i < n; i++)
-            Console.WriteLine(newarr[i]);
+        TArray c = new TArray();
+        c.setprintArray();
+        a.Task12(a, b, c);
         Console.WriteLine("Завдання 1.3: ");
         TArray zeroend = new TArray();
         zeroend.setprintArray();
