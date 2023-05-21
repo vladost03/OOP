@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-class TemperatureAnalyzer
+﻿class TemperatureAnalyzer
 {
     private Dictionary<string, double[]> temperatures = new Dictionary<string, double[]>();
 
@@ -10,12 +6,12 @@ class TemperatureAnalyzer
     {
         LoadTemperatureData(filePath);
     }
-
+    // Зчитуємо дані з файлу і заповнюємо ними масив
     private void LoadTemperatureData(string filePath)
     {
         string[] input = File.ReadAllLines(filePath);
         {
-            for (int i = 1; i < 12; i++)
+            for (int i = 0; i < 12; i++)
             {
                 string[] monthData = input[i].Split(' ');
                 double[] monthTemperatures = new double[30];
@@ -27,7 +23,7 @@ class TemperatureAnalyzer
             }
         }
     }
-
+    // Обчислюємо середню температуру для кожного місяця та виводимо її на екран
     public void PrintAverageTemperatures()
     {
         Console.WriteLine("Список середніх температур:");
@@ -37,7 +33,7 @@ class TemperatureAnalyzer
             Console.WriteLine("{0}: {1}", monthTemperatures.Key, averageTemperature);
         }
     }
-
+    // Сортуємо словник за значеннями (середніми температурами)
     public void GetSortedAverageTemperatures()
     {
         var sortedTemperatures = from pair in temperatures
@@ -52,12 +48,13 @@ class TemperatureAnalyzer
             Console.WriteLine("{0}: {1}", monthTemperatures.Key, averageTemperature);
         }
     }
-
+    // Повертає назву місяця за номером
     private string GetMonthName(int monthNumber)
     {
         return new DateTime(2000, monthNumber, 1).ToString("MMMM");
     }
 
+    // Обчислює середню температуру за масивом температур
     private double GetAverageTemperature(double[] temperatures)
     {
         double sum = 0.0;
